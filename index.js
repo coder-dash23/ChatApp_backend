@@ -7,7 +7,7 @@ const cors = require("cors");
 // Initialize express app
 const app = express();
 app.use(express.json()); // Middleware to parse JSON bodies
-app.use(cors({ origin: "https://navya.so/agentchat" })); // Enable CORS for API routes
+app.use(cors({ origin: "https://navya.so" })); // Enable CORS for API routes
 
 // Create HTTP server
 const server = http.createServer(app);
@@ -15,7 +15,7 @@ const server = http.createServer(app);
 // Instantiate server via Socket.IO with CORS configuration
 const io = new Server(server, {
   cors: {
-    origin: ["https://navya.so/agentchat"], // Allow requests from frontend
+    origin: ["https://navya.so"], // Allow requests from frontend
     methods: ["GET", "POST"],
     credentials: true,
   },
